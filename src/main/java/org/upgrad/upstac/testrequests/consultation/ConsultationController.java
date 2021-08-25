@@ -122,14 +122,11 @@ public class ConsultationController {
             // replace this line of code with your implementation
             User doctor =userLoggedInService.getLoggedInUser();
             return testRequestUpdateService.updateConsultation(id, testResult, doctor);
-
-
         } catch (ConstraintViolationException e) {
             throw asConstraintViolation(e);
         }catch (AppException e) {
             throw asBadRequest(e.getMessage());
         }
     }
-
 
 }
